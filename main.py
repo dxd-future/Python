@@ -753,7 +753,7 @@
 #     pawn1 = pawn(int(input()),int(input()))
 
 
-###################################### 14 ######################################
+###################################### 13 ######################################
 
 # Импортируем модуль
 # import char
@@ -774,14 +774,45 @@
 # word_count.word_count("fwek fjwei fj")
 
 
-from figures import Rectangle, Triangle, contain
+# from figures import Rectangle, Triangle, contain
 
 
-rect1 = Rectangle.Rectangle(10,5)
-tria1 = Triangle.Triangle(3, 4, 5)
-# tria1 = Triangle.Triangle(13, 14, 15)
+# rect1 = Rectangle.Rectangle(10,5)
+# tria1 = Triangle.Triangle(3, 4, 5)
+# # tria1 = Triangle.Triangle(13, 14, 15)
 
-print(contain.contain(rect1,tria1))
+# print(contain.contain(rect1,tria1))
 
-print(rect1.get_outer_rect())
-print(tria1.get_outer_rect())
+# print(rect1.get_outer_rect())
+# print(tria1.get_outer_rect())
+
+
+###################################### 14 ######################################
+
+import math
+ 
+
+# def hypotenuse(kat1, kat2):
+#     return int(math.sqrt(math.pow(kat1, 2) + math.pow(kat2, 2)))
+
+
+# print(hypotenuse(15, 20))
+
+
+# def square_circle(radius):
+#     return math.pi * math.pow(radius, 2)
+
+
+# print(square_circle(4))
+
+
+def korni(a, b, c):
+    d = pow(b, 2) - 4 * a * c
+    if d > 0:
+        return [-b + math.sqrt(d) / 2 * a, -b - math.sqrt(d) / 2 * a] 
+    elif d == 0:
+        return -b / 2 * a
+    else:
+        pass
+
+print(korni(1, -5, 6))
