@@ -789,12 +789,13 @@
 
 ###################################### 14 ######################################
 
-import math
- 
+# import math
+# import random
+import os
+
 
 # def hypotenuse(kat1, kat2):
 #     return int(math.sqrt(math.pow(kat1, 2) + math.pow(kat2, 2)))
-
 
 # print(hypotenuse(15, 20))
 
@@ -802,17 +803,76 @@ import math
 # def square_circle(radius):
 #     return math.pi * math.pow(radius, 2)
 
-
 # print(square_circle(4))
 
 
-def korni(a, b, c):
-    d = pow(b, 2) - 4 * a * c
-    if d > 0:
-        return [-b + math.sqrt(d) / 2 * a, -b - math.sqrt(d) / 2 * a] 
-    elif d == 0:
-        return -b / 2 * a
-    else:
-        pass
+# def korni(a, b, c):
+#     d = pow(b, 2) - 4 * a * c
+#     if d > 0:
+#         return [(-b + math.sqrt(d)) / (2 * a), (-b - math.sqrt(d)) / (2 * a)]
+#     elif d == 0:
+#         return -b / 2 * a
+#     else:
+#         return False
 
-print(korni(1, -5, 6))
+# print(korni(1, 3, -10))
+
+
+
+
+# def random100():
+#     return random.randint(1,100)
+
+# print(random100())
+
+
+arr = [1,2,3,4,5,6,7,8,9]
+arr2 = ['a','b','c','d']
+
+# def randomObj(array):
+#     return array[random.randint(len(array))]
+
+# print(randomObj)
+
+
+# def randomSort(array): 
+#     res = []
+#     len_arr = len(array)
+#     def addRandom():
+#         if len(res) != len_arr:
+#             rnd = random.randint(0, len(array) - 1)
+#             res.append(array[rnd])
+#             del array[rnd]
+#             addRandom()
+        
+#     addRandom()
+#     return res
+
+# print(randomSort(arr2))
+
+
+
+
+# def printCurrentDir():
+#     path = os.getcwd()
+#     res = path.split('\\')
+#     print(res[len(res) - 1])
+
+# printCurrentDir()
+
+
+def createFolder(name):
+    if os.path.exists(name):
+        print("файл уже существует") 
+    else:   
+        os.getcwd(name)
+
+createFolder("Новая папка")
+
+
+def checkFile(filename):
+    if os.path.exists(filename):
+        return "Файл существует"
+    return "Файл не существует"
+
+print(checkFile("Новая папк"))
