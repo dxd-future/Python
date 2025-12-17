@@ -789,9 +789,10 @@
 
 ###################################### 14 ######################################
 
-# import math
-# import random
+import math
+import random
 import os
+from datetime import date, time, datetime
 
 
 # def hypotenuse(kat1, kat2):
@@ -826,13 +827,13 @@ import os
 # print(random100())
 
 
-arr = [1,2,3,4,5,6,7,8,9]
-arr2 = ['a','b','c','d']
+# arr = [1,2,3,4,5,6,7,8,9]
+# arr2 = ['a','b','c','d']
 
 # def randomObj(array):
-#     return array[random.randint(len(array))]
+#     return array[random.randint(0, len(array) - 1)]
 
-# print(randomObj)
+# print(randomObj(arr))
 
 
 # def randomSort(array): 
@@ -848,7 +849,7 @@ arr2 = ['a','b','c','d']
 #     addRandom()
 #     return res
 
-# print(randomSort(arr2))
+# print(randomSort(arr))
 
 
 
@@ -856,23 +857,56 @@ arr2 = ['a','b','c','d']
 # def printCurrentDir():
 #     path = os.getcwd()
 #     res = path.split('\\')
-#     print(res[len(res) - 1])
+#     print(res[- 1])
 
 # printCurrentDir()
 
 
-def createFolder(name):
-    if os.path.exists(name):
-        print("файл уже существует") 
-    else:   
-        os.getcwd(name)
+# def createFolder(name):
+#     if os.path.exists(name):
+#         print("файл уже существует") 
+#     else:   
+#         os.mkdir(name)
 
-createFolder("Новая папка")
+# createFolder("Новая пап")
 
 
-def checkFile(filename):
-    if os.path.exists(filename):
-        return "Файл существует"
-    return "Файл не существует"
+# def checkFile(filename):
+#     if os.path.exists(filename):
+#         return "Файл существует"
+#     return "Файл не существует"
 
-print(checkFile("Новая папк"))
+# print(checkFile("Новая пап"))
+
+
+
+# def dateT(date):
+#     try:
+#         return datetime.strptime(date, '%d.%m.%Y')
+#     except ValueError:
+#         print( "Неправильная дата")
+#     finally:
+#         return "Код завершен"
+
+
+# print(dateT("10.13.2010"))
+
+
+# def checkDate(date):
+#     if  datetime.strptime(date, '%Y-%m-%d') < datetime.now():
+#         return True
+#     else: 
+#         return False
+    
+# print(checkDate("2007-01-01"))
+
+
+
+# def tickDate(date):
+#     future = datetime.strptime(date, '%Y-%m-%d')
+#     now = datetime.now()
+#     res = str(future - now).split()
+#     if future > now:
+#         return f"{res[0]}"
+    
+# print(tickDate("2026-01-01"))

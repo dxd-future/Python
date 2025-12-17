@@ -2,6 +2,11 @@
 
 import random
 
+
+class HitPointValueError(Exception):
+    def __init__(self, hitPoint_value):
+        super().__init__(f"{hitPoint_value} - Хп не должно быть отрицательным!")
+
 # Создание класса
 class Character():
     # Создание конструктора
@@ -38,7 +43,7 @@ class Character():
     @hitPoint.setter
     def hitPoint(self, value):
         if value < 0:
-            self._hitPoint = 0
+            raise HitPointValueError(value)
         else:
             self._hitPoint = value
               
@@ -73,3 +78,6 @@ class Character():
             self.exp -= self.exp_bar
             self.exp_bar *= self.level
             self.__addLvl__()
+
+
+Goblin = Character(10,-10)
